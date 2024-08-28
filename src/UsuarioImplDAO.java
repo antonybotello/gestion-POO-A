@@ -18,7 +18,7 @@ public class UsuarioImplDAO implements GenericDAO<Usuario> {
     @Override
     public void add(Usuario obj) throws SQLException{
 
-        String query= "INSERT INTO Usuarios (documento,nombres,apellidos,correo)"+
+        String query= "INSERT INTO usuarios (documento,nombres,apellidos,correo)"+
                       "VALUES(?,?,?,?)";
         try(PreparedStatement stmt= connection.prepareStatement(query)){
             stmt.setString(1, obj.getDocumento());
@@ -41,11 +41,11 @@ public class UsuarioImplDAO implements GenericDAO<Usuario> {
     public List<Usuario> getAll() throws SQLException {
         List<Usuario> usuarios= new ArrayList<>();
         // SELECT * FROM Usuarios
-        String query= "SELECT * FROM Usuarios";
+        String query= "SELECT * FROM usuarios";
         try(Statement stmt= connection.createStatement(); ResultSet rs = stmt.executeQuery(query);){
             while (rs.next()){
-                usuarios.add(new Usuario(rs.getInt("id"),
-                                         rs.getString("socumento"),
+                usuarios.add(new Usuario(rs.getInt("usuarioId"),
+                                         rs.getString("documento"),
                                          rs.getString("nombres"),
                                          rs.getString("apellidos"),
                                          rs.getString("correo")
