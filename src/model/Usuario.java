@@ -1,3 +1,4 @@
+package model;
 public class Usuario {
     private int id ;
     private String documento;
@@ -6,6 +7,14 @@ public class Usuario {
     private String correo;
     public Usuario() {
     }
+    
+    public Usuario(String documento, String nombres, String apellidos, String correo) {
+        this.documento = documento;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+    }
+
     public Usuario(int id, String documento, String nombres, String apellidos, String correo) {
         this.id = id;
         this.documento = documento;

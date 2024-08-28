@@ -1,3 +1,4 @@
+package model;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
@@ -5,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import utils.*;
 public class UsuarioImplDAO implements GenericDAO<Usuario> {
 
     private Connection connection;
@@ -25,7 +26,7 @@ public class UsuarioImplDAO implements GenericDAO<Usuario> {
             stmt.setString(2, obj.getNombres());
             stmt.setString(3, obj.getApellidos());
             stmt.setString(4, obj.getCorreo());
-
+            stmt.executeUpdate();
         }
         
     }
