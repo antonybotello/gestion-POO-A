@@ -33,6 +33,7 @@ public class UsuarioImplDAO implements GenericDAO<Usuario> {
 
     @Override
     public void delete(int id) {
+        String query="DELETE FROM usuarios WHERE usuarioId=?";
         // TODO Auto-generated method stub
         // DELETE FROM Usuarios WHERE id=id
         
@@ -61,6 +62,7 @@ public class UsuarioImplDAO implements GenericDAO<Usuario> {
 
     @Override
     public Usuario getById(int id) {
+        String query= "SELECT * FROM usuarios WHERE usuarioId=?";
         // TODO Auto-generated method stub
         // SELECT * FROM Usuarios WHERE id=id
         return null;
@@ -68,6 +70,7 @@ public class UsuarioImplDAO implements GenericDAO<Usuario> {
 
     @Override
     public void update(Usuario obj) {
+        String query= "UPDATE usuarios SET nombres=?, apellidos=?, correo=? WHERE usuarioId=?";
         // TODO Auto-generated method stub
         // UPDATE Usuarios SET nombre= obj.getNombre WHERE id=obj.getId
         
