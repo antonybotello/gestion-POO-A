@@ -32,8 +32,46 @@ public class App {
                     Usuario usuario = new Usuario(documento, nombres, apellidos, correo);
                     usuarioC.agregarUsuario(usuario);
                     break;
+                case 2:
+                    System.out.println("Digite el id del usuario a actulizar");
+                    int id = teclado.nextInt();
+                    teclado.nextLine();
+                    usuario = usuarioC.obtenerUsuarioPorId(id);
+                    System.out.println(usuario);
+                    System.out.println("Digite los nombres");
+                    nombres = teclado.nextLine();
+
+                    if (nombres!="") {
+                        usuario.setNombres(nombres);
+                    }
+                    
+                    System.out.println("Digite los apellidos");
+                    apellidos = teclado.nextLine();
+                    if (apellidos!="") {
+                        usuario.setNombres(apellidos);
+                    }
+                    System.out.println("Digite el correo");
+                    correo = teclado.nextLine();
+                    if (correo!="") {
+                        usuario.setNombres(correo);
+                    }
+                    usuarioC.actualizarUsuario(usuario);
+                    break;
+                case 3:
+                    System.out.println("Digite el id del usuario a eliminar");
+                    id = teclado.nextInt();
+                    teclado.nextLine();
+                    usuarioC.eliminarUsuario(id);
+                    break;
                 case 4:
                     usuarioC.listarUsuarios();
+                    break;
+                case 5:
+                    System.out.println("Digite el id del usuario a buscar");
+                    id = teclado.nextInt();
+                    teclado.nextLine();
+                    usuario= usuarioC.obtenerUsuarioPorId(id);
+                    System.out.println(usuario);
                     break;
                 case 0:
                     System.out.println("Saliendo del programa...");
